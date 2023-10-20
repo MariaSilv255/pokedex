@@ -1,6 +1,9 @@
+
 # Pokedex
 ## Descrição
 Este é um projeto em desenvolvimento criado para testar minhas habilidades de desenvolvimento web. A aplicação é uma Pokedex, que permite explorar informações sobre Pokémon.
+
+![Captura de tela 2023-10-20 131903](https://github.com/MariaSilv255/pokedex/assets/62973195/0edbec30-fe8e-4f75-912d-adb819c2b221)
 
 ## Tecnologias Utilizadas
 - [React](https://reactjs.org/): O framework principal para o desenvolvimento da aplicação.
