@@ -41,9 +41,29 @@ export const theme = {
         steel:'#4C91B2',
         water:'#58ABF6' 
     },
-    background:{
-        white:'#fffff',
-        defaulnput:'#f2f2f2'
-    }
+   
+    background: {
+        white: '#FFFFFF',
+        input: '#F2F2F2',
+        pressedInput: '#E2E2E2',
+        modal: '#000000',
+      },
+      text: {
+        white: '#FFFFFF',
+        black: '#17171B',
+        gray: '#747476',
+        number: '#17171B',
+      },
+      height: {
+        short: '#FFC5E6',
+        medium: '#AEBFD7',
+        tall: '#AAACB8',
+      },
+      weight: {
+        light: '#99CD7C',
+        normal: '#57B2DC',
+        heavy: '#5A92A5',
+      },
+    
 
 }

@@ -1,12 +1,15 @@
 import styled from "styled-components";
-import { theme } from "./Theme";
-import imgFundo from './img/6x3.svg'
+import {CardType} from "../Components/CardType.style";
+import { theme } from "../css/Theme"
 
-export default function Card({ id, name, type, url }) {
+export default function Card({ id, name, types, url }) {
 
     const Container = styled.div`
-    background-color: ${({ theme }) => theme.backgroundTypes.bug};
+    background-color: ${props => props.theme.backgroundTypes[types[0].type.name]};
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    
 `;
 
     const Conteudo = styled.div`
@@ -15,7 +18,14 @@ export default function Card({ id, name, type, url }) {
   padding: 20px;
 `;
 
+    const Types = () => {
+        if (types[1]) {
+            return types[0].type.name + " " + types[1].type.name
+        } else {
+            return types[0].type.name;
+        }
 
+    }
 
     return (
 
@@ -24,9 +34,10 @@ export default function Card({ id, name, type, url }) {
             <Conteudo>
                 <p>{id}</p>
                 <h3>{name}</h3>
+                <CardType>{Types()}</CardType>
 
             </Conteudo>
-            <img src={url} />
+            <img width={120} src={url} />
         </Container>
 
     );
