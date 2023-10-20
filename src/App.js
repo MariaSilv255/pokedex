@@ -1,9 +1,11 @@
-import Home from "./Pages/Home";
+
+import AppRoutes from "./routers/routes";
+
 
 
 function App() {
   return (
-    <Home />
+    <AppRoutes />
   );
 }
 

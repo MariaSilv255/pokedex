@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {  Route, Routes } from "react-router-dom";
 import Home from "../Pages/Home";
 import Profile from "../Pages/Profile";
 import Error from "../Pages/Error";
@@ -12,7 +12,7 @@ const AppRoutes = () => {
             <Route path="*" element={<Error />} />
 
         </Routes>
- 
+
     );
 };
 export default AppRoutes;
