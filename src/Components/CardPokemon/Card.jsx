@@ -22,7 +22,7 @@ export default function Card({ id, name, types, url }) {
                 <p>{id}</p>
                 <h3>{name}</h3>
 
-                <OrganizarType>
+                <OrganizarType key={id}>
                     {types.map((type) => (
                         <CardType type={type.type.name}>{type.type.name}</CardType>
 

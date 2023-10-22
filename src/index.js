@@ -5,7 +5,8 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './css/Theme';
 import { GlobalStyles } from './css/GlobalStyle';
 import { BrowserRouter } from 'react-router-dom';
-import AppRouter from './routers/routes';
+import store from './redux/store';
+import { Provider } from 'react-redux';
 
 
 
@@ -15,8 +16,9 @@ root.render(
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <BrowserRouter>
-      <AppRouter />
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
