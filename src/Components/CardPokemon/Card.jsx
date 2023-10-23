@@ -1,6 +1,4 @@
-import styled from "styled-components";
 import { CardType } from "./CardType.style";
-import { type } from "@testing-library/user-event/dist/type";
 import { Container, Conteudo, Imagem, OrganizarType } from "./Card.style";
 
 

@@ -22,15 +22,14 @@ export default function Home() {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
         }
         axios.all(endpoints.map((endpoint) => axios.get(endpoint)))
-            .then((res) => setPokemon(res))
+            .then((res) => setPokemon(res,console.log(res)))
             .catch((error) => console.error('Error ao acessar a API', error));
     }
 
 
     //-------------------REDUX----------------
 
-    const { apiData } = useSelector((state) => state.apiReducer);
-    console.log({ apiData })
+    
 
     const dispatch = useDispatch();
 
@@ -45,14 +44,20 @@ export default function Home() {
         <Container onClick={handleClickProfile}>
 
             <Grid container>
-           
-                {pokemons.map((pokemon) => (
 
-                    <Grid xs={12} md={3} sm={6} key={pokemon.data.id}>
-                        <Card id={pokemon.data.id} name={pokemon.data.name}
-                            types={pokemon.data.types}
-                            url={pokemon.data.sprites.other['official-artwork'].front_default} />
-                    </Grid>
+                {pokemons.map((pokemon) => (
+                    
+                        <Grid xs={12} md={3} sm={6} key={pokemon.data.id}>
+
+                          <Link to={`Profile/${pokemon.data.id}`}>
+
+                            <Card id={pokemon.data.id} name={pokemon.data.name}
+                                types={pokemon.data.types}
+                                url={pokemon.data.sprites.other['official-artwork'].front_default} />
+                            
+                                </Link>
+                        </Grid>
+                    
                 ))}
 
             </Grid>
