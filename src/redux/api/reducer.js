@@ -1,15 +1,16 @@
+import apiActiontypes from "./action-types";
 
 const initialState = {
-    apiData: null,
+    apiData: [null],
 }
 
-const userReducer = (state = initialState, action) => {
+const apiReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'pokemon/profile':
+        case apiActiontypes.PROFILE:
             
         return { ...state, apiData: action.payload };
         default:
             return state;
     }
 }
-export default userReducer;
+export default apiReducer;

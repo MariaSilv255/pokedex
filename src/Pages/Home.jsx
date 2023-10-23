@@ -3,6 +3,9 @@ import axios from "axios";
 import Card from "../Components/CardPokemon/Card";
 import { Container } from "../css/Container.style";
 import { Grid } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { apiProfile } from '../redux/api/action';
+import { Link } from "react-router-dom";
 
 export default function Home() {
 
@@ -24,15 +27,28 @@ export default function Home() {
     }
 
 
+    //-------------------REDUX----------------
+
+    const { apiData } = useSelector((state) => state.apiReducer);
+    console.log({ apiData })
+
+    const dispatch = useDispatch();
+
+    const handleClickProfile = () => {
+        dispatch(apiProfile({ pokemons }))
+    }
+
+
+    //-----------------FIM REDUX----------------
+
     return (
-        <Container>
+        <Container onClick={handleClickProfile}>
 
             <Grid container>
-
+           
                 {pokemons.map((pokemon) => (
-                    <Grid xs={12} md={3} sm={6} key={pokemon.data.id}>
-                            
 
+                    <Grid xs={12} md={3} sm={6} key={pokemon.data.id}>
                         <Card id={pokemon.data.id} name={pokemon.data.name}
                             types={pokemon.data.types}
                             url={pokemon.data.sprites.other['official-artwork'].front_default} />

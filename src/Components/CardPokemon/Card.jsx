@@ -6,13 +6,6 @@ import { Container, Conteudo, Imagem, OrganizarType } from "./Card.style";
 
 export default function Card({ id, name, types, url }) {
 
-    //const Types = () => {
-    //  if (types[1]) {
-    //    return types[0].type.name + " " + types[1].type.name
-    //} else {
-    //   return types[0].type.name;
-    //}
-    //}
 
     return (
 // <Container types={types[0].type.name}> : types é minha prop quando chamar no style vai ficar [prop.types]
