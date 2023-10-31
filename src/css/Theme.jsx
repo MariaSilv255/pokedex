@@ -64,6 +64,14 @@ export const theme = {
         normal: '#57B2DC',
         heavy: '#5A92A5',
       },
+      size:{
+        aplicationTitle : '32px',
+        pokemonName: '26px',
+        filterTitle: '16px',
+        description: '15px',
+        pokemonNumber: '12px',
+        pokemonType: '12px',
+      }
     
 
 }

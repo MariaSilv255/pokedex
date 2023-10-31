@@ -8,7 +8,7 @@ const AppRoutes = () => {
 
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Profile/:pokemonId" element={<Profile />} />
+            <Route path="/profile/:pokemonId" element={<Profile />} />
             <Route path="*" element={<Error />} />
 
         </Routes>

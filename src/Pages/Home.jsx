@@ -3,7 +3,7 @@ import axios from "axios";
 import Card from "../Components/CardPokemon/Card";
 import { Container } from "../css/Container.style";
 import { Grid } from "@mui/material";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { apiProfile } from '../redux/api/action';
 import { Link } from "react-router-dom";
 
@@ -22,22 +22,16 @@ export default function Home() {
             endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
         }
         axios.all(endpoints.map((endpoint) => axios.get(endpoint)))
-            .then((res) => setPokemon(res,console.log(res)))
+            .then((res) => setPokemon(res))
             .catch((error) => console.error('Error ao acessar a API', error));
     }
 
 
     //-------------------REDUX----------------
-
-    
-
     const dispatch = useDispatch();
-
     const handleClickProfile = () => {
         dispatch(apiProfile({ pokemons }))
     }
-
-
     //-----------------FIM REDUX----------------
 
     return (
@@ -49,7 +43,7 @@ export default function Home() {
                     
                         <Grid xs={12} md={3} sm={6} key={pokemon.data.id}>
 
-                          <Link to={`Profile/${pokemon.data.id}`}>
+                          <Link to={`profile/${pokemon.data.id}`}>
 
                             <Card id={pokemon.data.id} name={pokemon.data.name}
                                 types={pokemon.data.types}
