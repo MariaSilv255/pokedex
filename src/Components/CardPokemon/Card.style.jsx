@@ -8,6 +8,10 @@ justify-content: space-between;
 margin: ${(prop) => prop.marginCard ? prop.marginCard : '15px'};
 position: relative;
 border-radius: 7px;
+
+
+
+
   
 `;
 
@@ -16,6 +20,7 @@ display: flex ;
 flex-direction: column;
 padding: 20px;
 z-index: 1;
+
 `;
 
 export const Imagem = styled.div`

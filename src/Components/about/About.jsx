@@ -1,8 +1,9 @@
-import { Titulo2 } from "../../css/Title.style";
+import { Description, Titulo2 } from "../../css/Title.style";
+import { Coluna, Table } from "../table/table.style";
 
 
-export default function About({habitat, abilities, height, weight, baseExp, base, growthRate}) {
-   
+export default function About({ habitat, abilities, height, weight, baseExp, base, growthRate, captureRate, info }) {
+
     const habilidade = () => {
         if (abilities[1]) {
             return abilities[0].ability.name + " | " + abilities[1].ability.name;
@@ -13,59 +14,62 @@ export default function About({habitat, abilities, height, weight, baseExp, base
     return (
         <div>
 
-            <table border="1">
+            <Table >
+                <Description>
+                    {info}
+                </Description>
                 <tr>
-                    <td>
+                    <Coluna>
                         <Titulo2>
                             Pokémon Data
                         </Titulo2>
-                    </td>
+                    </Coluna>
                 </tr>
                 <tr>
-                    <th>habitat</th>
-                    <td>{habitat}</td>
+                    <Coluna bold='bold'>habitat</Coluna>
+                    <Coluna color >{habitat}</Coluna>
                 </tr>
                 <tr>
-                    <th>Height</th>
-                    <td>{height}</td>
+                    <Coluna bold='bold'>Height</Coluna>
+                    <Coluna color>{height}</Coluna>
                 </tr>
                 <tr>
-                    <th>Weight</th>
-                    <td>{weight}</td>
+                    <Coluna bold='bold'>Weight</Coluna>
+                    <Coluna color>{weight}</Coluna>
                 </tr>
                 <tr>
-                    <th>Abilities</th>
-                    <td>{habilidade()}</td>
+                    <Coluna bold='bold'>Abilities</Coluna>
+                    <Coluna color>{habilidade()}</Coluna>
                 </tr>
                 <tr>
-                    <th>Gender</th>
-                    <td>22</td>
+                    <Coluna bold='bold'>Gender</Coluna>
+                    <Coluna color>22</Coluna>
                 </tr>
 
                 <tr>
-                    <td>
+                    <Coluna>
                         <Titulo2>
                             Trainer
                         </Titulo2>
-                    </td>
+                    </Coluna>
                 </tr>
                 <tr>
-                    <th>Base exp</th>
-                    <td>{baseExp}</td>
+                    <Coluna bold='bold'>Base exp</Coluna>
+                    <Coluna color>{baseExp}</Coluna>
                 </tr>
                 <tr>
-                    <th>Base happiness</th>
-                    <td>{base}</td>
+                    <Coluna bold='bold'>Base happiness</Coluna>
+                    <Coluna color>{base}</Coluna>
                 </tr>
                 <tr>
-                    <th>Catch Rate</th>
-                    <td>22</td>
+                    <Coluna bold='bold'>Catch Rate</Coluna>
+                    <Coluna color >{captureRate}</Coluna>
                 </tr>
                 <tr>
-                    <th>Growth Rate</th>
-                    <td>{growthRate}</td>
+                    <Coluna bold='bold'>Growth Rate</Coluna>
+                    <Coluna color>{growthRate}</Coluna>
                 </tr>
-            </table>
+            </Table>
         </div>
     );
 }
