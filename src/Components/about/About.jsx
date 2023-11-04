@@ -2,7 +2,7 @@ import { Description, Titulo2 } from "../../css/Title.style";
 import { Coluna, Table } from "../table/table.style";
 
 
-export default function About({ habitat, abilities, height, weight, baseExp, base, growthRate, captureRate, info }) {
+export default function About({ habitat, abilities, height, weight, baseExp, base, growthRate, captureRate, info, types }) {
 
     const habilidade = () => {
         if (abilities[1]) {
@@ -20,7 +20,7 @@ export default function About({ habitat, abilities, height, weight, baseExp, bas
                 </Description>
                 <tr>
                     <Coluna>
-                        <Titulo2>
+                        <Titulo2 types={types}>
                             Pokémon Data
                         </Titulo2>
                     </Coluna>
@@ -48,7 +48,7 @@ export default function About({ habitat, abilities, height, weight, baseExp, bas
 
                 <tr>
                     <Coluna>
-                        <Titulo2>
+                        <Titulo2 types={types}>
                             Trainer
                         </Titulo2>
                     </Coluna>

@@ -19,7 +19,7 @@ color:${({theme}) => theme.text.white};
 export const Titulo2 = styled.h2`
 font-size: ${({theme}) => theme.size.filterTitle};
 font-weight: regular;
-color:${({theme}) => theme.text.black};
+color: ${(prop) => prop.theme.backgroundTypes[prop.types] ? prop.theme.backgroundTypes[prop.types] : 'black'};
     
 `;
 export const Titulo3 = styled.h3`

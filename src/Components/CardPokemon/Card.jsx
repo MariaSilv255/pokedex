@@ -3,7 +3,7 @@ import { Container, Conteudo, Imagem, OrganizarType } from "./Card.style";
 import { Titulo1 } from "../../css/Title.style";
 
 
-export default function Card({ id, name, types, url, marginCard }) {
+export default function Card({ id, name, types, url, marginCard,tamanho}) {
 
    
     return (
@@ -17,17 +17,13 @@ export default function Card({ id, name, types, url, marginCard }) {
                 <OrganizarType key={id}>
                     {types.map((type) => (
                         <CardType type={type.type.name}>{type.type.name}</CardType>
-
                     ))}
 
                 </OrganizarType>
-
-
-
             </Conteudo>
 
             <Imagem>
-                <img width={120} src={url} title={name} alt="Representação do pokemon" />
+                <img width={tamanho} src={url} title={name} alt="Representação do pokemon" />
             </Imagem>
 
         </Container>

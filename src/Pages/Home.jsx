@@ -45,7 +45,7 @@ export default function Home() {
 
                           <Link to={`profile/${pokemon.data.id}`}>
 
-                            <Card id={pokemon.data.id} name={pokemon.data.name}
+                            <Card tamanho={120} id={pokemon.data.id} name={pokemon.data.name}
                                 types={pokemon.data.types}
                                 url={pokemon.data.sprites.other['official-artwork'].front_default} />
                             
