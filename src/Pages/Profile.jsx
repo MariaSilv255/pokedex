@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 import Start from "../Components/Stars/Starts";
+import { Fade } from "react-reveal";
 
 export default function Profile() {
 
@@ -61,60 +62,67 @@ export default function Profile() {
     <Container >
       {infoPokemon.length === 0 ? <Skeleton /> :
         <>
+
           <Grid>
             <Link to={'/'}><IoMdArrowBack size={50} /></Link>
           </Grid>
           <Grid container>
 
-            <Customgrid sm={6} xs={12} width={550}
+            <Customgrid sm={6} xs={12}  width={550}
               types={typeColor()}
             >
-              <div>
-                <Card tamanho={190} marginCard={'0px'} id={apiData.pokemons[Idpokemon()].data.id} name={apiData.pokemons[Idpokemon()].data.name}
-                  types={apiData.pokemons[Idpokemon()].data.types}
-                  url={apiData.pokemons[Idpokemon()].data.sprites.other['official-artwork'].front_default} />
-              </div>
+        
+                <div>
+                  <Card tamanho={190} marginCard={'0px'} id={apiData.pokemons[Idpokemon()].data.id} name={apiData.pokemons[Idpokemon()].data.name}
+                    types={apiData.pokemons[Idpokemon()].data.types}
+                    url={apiData.pokemons[Idpokemon()].data.sprites.other['official-artwork'].front_default} />
+                </div>
+        
             </Customgrid>
 
 
             <Grid sm={1}></Grid>
 
-            <Grid sm={5} backgroundColor={'white'}>
+            <Grid sm={5} height={500}>
 
               <Itens>
                 <Titulo2 types={typeColor()} onClick={() => showComponent(1)}>About</Titulo2>
                 <Titulo2 types={typeColor()} onClick={() => showComponent(2)}>Stars</Titulo2>
-                
+
               </Itens>
 
-              {componentVisable === 1 && 
-              
-              <About
-                abilities={apiData.pokemons[Idpokemon()].data.abilities}
-                height={apiData.pokemons[Idpokemon()].data.height}
-                weight={apiData.pokemons[Idpokemon()].data.weight}
-                baseExp={apiData.pokemons[Idpokemon()].data.base_experience}
-                base={infoPokemon.data.base_happiness}
-                habitat={infoPokemon.data.habitat.name}
-                captureRate={infoPokemon.data.capture_rate}
-                info={infoPokemon.data.flavor_text_entries[6].flavor_text}
-                types={typeColor()}
-              />
+              {componentVisable === 1 &&
+                <Fade>
+                  <About
+                    abilities={apiData.pokemons[Idpokemon()].data.abilities}
+                    height={apiData.pokemons[Idpokemon()].data.height}
+                    weight={apiData.pokemons[Idpokemon()].data.weight}
+                    baseExp={apiData.pokemons[Idpokemon()].data.base_experience}
+                    base={infoPokemon.data.base_happiness}
+                    habitat={infoPokemon.data.habitat.name}
+                    captureRate={infoPokemon.data.capture_rate}
+                    info={infoPokemon.data.flavor_text_entries[6].flavor_text}
+                    types={typeColor()}
+                  />
+                </Fade>
               }
-              {componentVisable === 2 && 
-              <Start width={500}
-              hp={apiData.pokemons[Idpokemon()].data.stats[0].base_stat}
-              Attack={apiData.pokemons[Idpokemon()].data.stats[1].base_stat}
-              defense={apiData.pokemons[Idpokemon()].data.stats[2].base_stat}
-              specialAttack={apiData.pokemons[Idpokemon()].data.stats[3].base_stat}
-              specialDefense={apiData.pokemons[Idpokemon()].data.stats[4].base_stat}
-              speed={apiData.pokemons[Idpokemon()].data.stats[5].base_stat}
-              types={typeColor()}
-              />}
+              {componentVisable === 2 &&
+                <Fade>
+                  <Start width={500}
+                    hp={apiData.pokemons[Idpokemon()].data.stats[0].base_stat}
+                    Attack={apiData.pokemons[Idpokemon()].data.stats[1].base_stat}
+                    defense={apiData.pokemons[Idpokemon()].data.stats[2].base_stat}
+                    specialAttack={apiData.pokemons[Idpokemon()].data.stats[3].base_stat}
+                    specialDefense={apiData.pokemons[Idpokemon()].data.stats[4].base_stat}
+                    speed={apiData.pokemons[Idpokemon()].data.stats[5].base_stat}
+                    types={typeColor()}
+                  />
+                   </Fade>
+                  }
+               
 
-              
 
-            </Grid>
+              </Grid>
           </Grid>
 
         </>

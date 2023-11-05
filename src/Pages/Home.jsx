@@ -8,6 +8,7 @@ import { apiProfile } from '../redux/api/action';
 import { Link } from "react-router-dom";
 import { Texto } from "../Components/Input/Input.style";
 
+
 export default function Home() {
 
     const [pokemons, setPokemon] = useState([]);
@@ -58,22 +59,22 @@ export default function Home() {
             <Grid container>
 
                 {pokemons.map((pokemon) => (
-                    
+                 
                         <Grid xs={12} md={3} sm={6} key={pokemon.data.id}>
 
-                          <Link to={`profile/${pokemon.data.id}`}>
+                            <Link to={`profile/${pokemon.data.id}`}>
 
-                            <Card tamanho={120} id={pokemon.data.id} name={pokemon.data.name}
-                                types={pokemon.data.types}
-                                url={pokemon.data.sprites.other['official-artwork'].front_default} />
-                            
-                                </Link>
+                                <Card tamanho={120} id={pokemon.data.id} name={pokemon.data.name}
+                                    types={pokemon.data.types}
+                                    url={pokemon.data.sprites.other['official-artwork'].front_default} />
+
+                            </Link>
                         </Grid>
-                    
+                 
                 ))}
 
             </Grid>
-
+            
         </Container>
     );
 }

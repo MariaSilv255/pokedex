@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Texto = styled.input`
   
-  width: 100%;
+  width: 98%;
   padding:15px;
   margin: 15px;
   border-radius: 7px;
