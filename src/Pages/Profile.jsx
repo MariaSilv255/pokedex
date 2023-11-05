@@ -91,6 +91,7 @@ export default function Profile() {
 
               </Itens>
 
+
               {componentVisable === 1 &&
                 <Fade>
                   <About
