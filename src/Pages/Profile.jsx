@@ -84,7 +84,7 @@ export default function Profile() {
               <Itens>
                 <Titulo2 types={typeColor()} onClick={() => showComponent(1)}>About</Titulo2>
                 <Titulo2 types={typeColor()} onClick={() => showComponent(2)}>Stars</Titulo2>
-                <Titulo2 types={typeColor()} onClick={() => showComponent(3)}>Evolution</Titulo2>
+                
               </Itens>
 
               {componentVisable === 1 && 

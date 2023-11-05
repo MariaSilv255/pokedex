@@ -1,6 +1,6 @@
 import { CardType } from "./CardType.style";
 import { Container, Conteudo, Imagem, OrganizarType } from "./Card.style";
-import { Titulo1 } from "../../css/Title.style";
+import { Titulo1, Titulo3 } from "../../css/Title.style";
 
 
 export default function Card({ id, name, types, url, marginCard,tamanho}) {
@@ -11,7 +11,7 @@ export default function Card({ id, name, types, url, marginCard,tamanho}) {
         <Container types={types[0].type.name} marginCard={marginCard}>
 
             <Conteudo>
-                <p>{id}</p>
+           <Titulo3>{id}</Titulo3>
                 <Titulo1>{name}</Titulo1>
 
                 <OrganizarType key={id}>

@@ -6,6 +6,7 @@ import { Grid } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { apiProfile } from '../redux/api/action';
 import { Link } from "react-router-dom";
+import { Texto } from "../Components/Input/Input.style";
 
 export default function Home() {
 
@@ -34,8 +35,25 @@ export default function Home() {
     }
     //-----------------FIM REDUX----------------
 
+    const Pesquisa = (texto) => {
+        var filter = [];
+        const name = texto.toLowerCase();
+
+        if (name === "") {
+            getPokemons();
+        }
+
+        for (var i in pokemons) {
+            if (pokemons[i].data.name.includes(name)) {
+                filter.push(pokemons[i]);
+            }
+        }
+        setPokemon(filter);
+    }
+
     return (
         <Container onClick={handleClickProfile}>
+            <Texto placeholder="Name Pokemon" onChange={((texto) => Pesquisa(texto.target.value))} />
 
             <Grid container>
 
