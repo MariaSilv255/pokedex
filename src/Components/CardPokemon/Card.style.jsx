@@ -4,15 +4,18 @@ export const Container = styled.div`
 background-color: ${props => props.theme.backgroundTypes[props.types]};
 display: flex;
 flex-direction: row;
+justify-content: space-between;
 margin: ${(prop) => prop.marginCard ? prop.marginCard : '15px'};
 position: relative;
 border-radius: 7px;
+
   
 `;
 
 export const Conteudo = styled.div`
 display: flex ;
 flex-direction: column;
+margin-right: 220px;
 padding: 20px;
 z-index: 1;
 
