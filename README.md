@@ -21,5 +21,4 @@ Atualmente em desenvolvimento, a Pokedex terá as seguintes funcionalidades:
  ## API
 Este projeto utiliza a [API PokeAPI](https://pokeapi.co/) para obter informações sobre Pokémon.
 
-## Layout
-O layout da página foi projetado no Figma. Você pode visualizar o layout no seguinte link: [Layout no Figma](https://www.figma.com/file/THLxZSlOoUYMZrjFg0Kl1M/Pok%C3%A9dex?type=design&node-id=218-4649&mode=design&t=ak0LwbwXkrzst2Qj-0). [Autor](https://farias.design/)
+
